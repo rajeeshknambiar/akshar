@@ -304,20 +304,21 @@ License:      The LaTeX Project Public License v1.3c or later.
 % \begin{variable}{\c_@@_joining_tl, \c_@@_diacritics_tl}
 % These variables store the special characters we need to take into account:
 % \begin{itemize}
-%   \item \cs{c_@@_joining_tl} is the ``connecting'' character  ्.
+%   \item \cs{c_@@_joining_tl} is the list of ``connecting'' characters  ्.
 %   \item \cs{c_@@_diacritics_tl} is the list of all diacritics: ा,  ि,  ी,  ु, 
 %    ू,  े,  ै,  ो,  ौ,  ं,  ः,  ॢ,  ृ,  ॅ,  ँ,  ़,  ॆ,  ॊ,  ॉ,  ॎ,  ॏ,  ॑,
 %     ॒,  ॓,  ॔,  ॕ,  ॖ,  ॗ,  ॄ,  ऺ,  ऻ,  ꣠,  ꣡,  ꣢,  ꣣,  ꣤,  ꣥,  ꣦,  ꣧,  ꣨,  ꣩, 
 %    ꣪,  ꣫,  ꣬,  ꣭,  ꣮,  ꣯,  ꣰,  ꣱,  ꣿ.
 % \end{itemize}
 %    \begin{macrocode}
-\tl_const:Nn \c_@@_joining_tl { ्}
+\tl_const:Nn \c_@@_joining_tl { ्, ്}
 \tl_const:Nn \c_@@_diacritics_tl
   {
     ा,  ि,  ी,  ु,  ू,  े,  ै,  ो,  ौ,  ं,  ः,  ॢ,  ृ, 
     ॅ,  ँ,  ़,  ॆ,  ॊ,  ॉ,  ॎ,  ॏ,  ॑,  ॒,  ॓,  ॔,  ॕ,  ॖ,  ॗ, 
     ॄ,  ऺ,  ऻ,  ꣠,  ꣡,  ꣢,  ꣣,  ꣤,  ꣥,  ꣦,  ꣧,  ꣨,  ꣩,  ꣪, 
-    ꣫,  ꣬,  ꣭,  ꣮,  ꣯,  ꣰,  ꣱,  ꣿ
+    ꣫,  ꣬,  ꣭,  ꣮,  ꣯,  ꣰,  ꣱,  ꣿ,
+    ഀ, ഁ, ം, ഃ, ഄ, ഻, ഼, ാ, ി, ീ, ു, ൂ, ൃ, ൄ, െ, േ, ൈ, ൊ, ോ, ൌ, ൗ, ൎ, ൢ, ൣ
   }
 %    \end{macrocode}
 % \end{variable}
@@ -521,7 +522,7 @@ License:      The LaTeX Project Public License v1.3c or later.
               { \l_@@_tmpa_tl \l_@@_map_tl }
           }
           {
-            \tl_if_eq:NNTF \l_@@_map_tl \c_@@_joining_tl
+            \tl_if_in:NoTF \c_@@_joining_tl {\l_@@_map_tl}
               {
 %    \end{macrocode}
 % In this case, the character is the joining character,  ्. What we do is 
