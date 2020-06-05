@@ -4,7 +4,7 @@
 % ---------------------------------------------------------------------------
 % Package:      akshar
 % Author:       Vu Van Dung
-% Description:  Support for syllables in the Devanagari script
+% Description:  Support for syllables in the South Asian scripts
 % Repository:   https://github.com/joulev/akshar
 % Bug tracker:  https://github.com/joulev/akshar/issues
 % License:      The LaTeX Project Public License v1.3c or later
@@ -35,7 +35,7 @@
 Package:      akshar
 Author:       Vu Van Dung
 Version:      0.1  (23 May 2020)
-Description:  Support for syllables in the Devanagari script
+Description:  Support for syllables in the South Asian scripts
 Repository:   https://github.com/joulev/akshar
 Bug tracker:  https://github.com/joulev/akshar/issues
 License:      The LaTeX Project Public License v1.3c or later. 
@@ -48,7 +48,7 @@ License:      The LaTeX Project Public License v1.3c or later.
 \def\aksharPackageName{akshar}
 \def\aksharPackageVersion{0.1}
 \def\aksharPackageDate{2020/05/23}
-\def\aksharPackageDescription{Support for syllables in the Devanagari script (JV)}
+\def\aksharPackageDescription{Support for syllables in the South Asian scripts (JV)}
 %</driver|package>
 %<*driver>
 \documentclass{l3doc}
@@ -130,8 +130,9 @@ License:      The LaTeX Project Public License v1.3c or later.
 % \maketitle
 %
 % \begin{abstract}
-%   This package provides tools to deal with special characters in a Devanagari 
-%   string.
+%   This package provides tools to deal with special characters in a string
+%   of South Asian script. Currently supported scripts: Bengali, Gujarati,
+%   Gurmukhi, Kannada, Oriya, Malayalam, Sinhala, Tamil and Telugu.
 % \end{abstract}
 %
 % \tableofcontents
@@ -139,7 +140,7 @@ License:      The LaTeX Project Public License v1.3c or later.
 %
 % \begin{documentation}
 % \section{Introduction}
-% When dealing with processing strings in the Devanagari script, normal \LaTeX\ 
+% When dealing with processing strings in the South Asian scripts, normal \LaTeX\ 
 % commands usually find some difficulties in distinguishing ``normal'' 
 % characters, like क, and ``special'' characters, for example  ् or ी. Let's 
 % consider this example code:
@@ -154,10 +155,10 @@ License:      The LaTeX Project Public License v1.3c or later.
 % do so.
 %
 % To tackle that, this package provides \pkg{expl3} functions to ``convert'' a 
-% given string, written in the Devanagari script, to a sequence of token lists. 
-% each of these token lists is a ``true'' Devanagari character. You can now do 
-% anything you want with this sequence; and this package does provide some 
-% front-end macros for some simple actions on the input string.
+% given string, written in South Asian scripts, to a sequence of token lists. 
+% each of these token lists is a ``true'' South Asian language character. You
+% can now do anything you want with this sequence; and this package does
+% provide some front-end macros for some simple actions on the input string.
 %
 % \section{User manual}
 % \subsection{\LaTeXe\ macros}\label{latex2e-macros}
@@ -165,7 +166,7 @@ License:      The LaTeX Project Public License v1.3c or later.
 %   \begin{syntax}
 %     \cs{aksharStrLen} \marg{token list}
 %   \end{syntax}
-% Return the number of Devanagari characters in the \meta{token list}.
+% Return the number of South Asian characters in the \meta{token list}.
 % \end{function}
 % \begin{codeexample}[]
 %There are \aksharStrLen{ नमस्कार } characters in नमस्कार.\par
@@ -502,7 +503,7 @@ License:      The LaTeX Project Public License v1.3c or later.
 % \subsection{The \cs{akshar_convert:Nn} function and its variants}
 % \begin{macro}{\akshar_convert:Nn, \akshar_convert:cn,
 %               \akshar_convert:Nx, \akshar_convert:cx}
-% This converts |#2| to a sequence of \emph{true} Devanagari characters. The 
+% This converts |#2| to a sequence of \emph{true} South Asian characters. The 
 % sequence is set to |#1|, which should be a sequence variable. The assignment 
 % is local.
 %    \begin{macrocode}
